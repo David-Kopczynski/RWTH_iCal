@@ -1,0 +1,30 @@
+{
+  "name": "rwth_ical",
+  "version": "1.0.0",
+  "description": "edit iCal-files to create new rwth schedules",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc && electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "win": {
+      "target": "nsis"
+    },
+    "dmg": {
+      "icon": "icon.ico"
+    },
+    "files": [
+      "build/**/*"
+    ]
+  },
+  "author": "David E. C. Kopczynski",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^20.0.1",
+    "@types/electron": "^1.6.10",
+    "electron-builder": "^23.3.3",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {}
+}
