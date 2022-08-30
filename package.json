@@ -4,6 +4,7 @@
   "description": "edit iCal-files to create new rwth schedules",
   "main": "build/index.js",
   "scripts": {
+    "dev": "tsc && electron ./build",
     "build": "tsc && electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
