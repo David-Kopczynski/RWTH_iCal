@@ -1,5 +1,6 @@
 import { app, BrowserWindow, dialog, ipcMain } from "electron";
 import * as fs from "fs";
+import * as path from "path";
 import * as ical2json from "ical2json";
 
 const DEFAULT_CONFIG: {
@@ -184,7 +185,7 @@ const openModal = async (settings: Settings) => {
     const modal = new BrowserWindow({
       title: "Eingabe RWTH_iCal",
       width: 800,
-      height: 350,
+      height: 345,
       center: true,
       resizable: false,
       frame: true,
@@ -196,7 +197,7 @@ const openModal = async (settings: Settings) => {
       },
     });
     modal.setMenu(null);
-    modal.loadFile("modal/modal.html");
+    modal.loadFile(path.join(__dirname, "modal/modal.html"));
 
     // Hide while loading
     modal.once("ready-to-show", () => modal.show());
