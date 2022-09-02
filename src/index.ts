@@ -65,14 +65,10 @@ app.on("ready", async () => {
       text: `${event}: ${descriptionByEvent[event]}`,
       inputs: [
         {
-          value: "",
           placeholder: "Name des Events",
-          label: "",
         },
         {
-          value: "",
           placeholder: "Beschreibung des Events",
-          label: "",
         },
       ],
     });
@@ -112,14 +108,10 @@ app.on("ready", async () => {
       text: `${location}`,
       inputs: [
         {
-          value: "",
           placeholder: "Adresse des Ortes",
-          label: "",
         },
         {
-          value: "",
           placeholder: "Geo-Koordinaten",
-          label: "",
         },
       ],
     });
@@ -169,13 +161,9 @@ type Settings = {
   inputs: [
     {
       placeholder: string;
-      value: string;
-      label: string;
     },
     {
       placeholder: string;
-      value: string;
-      label: string;
     }
   ];
 };
@@ -196,7 +184,7 @@ const openModal = async (settings: Settings) => {
     const modal = new BrowserWindow({
       title: "Eingabe RWTH_iCal",
       width: 800,
-      height: 600,
+      height: 350,
       center: true,
       resizable: false,
       frame: true,
@@ -209,7 +197,6 @@ const openModal = async (settings: Settings) => {
     });
     modal.setMenu(null);
     modal.loadFile("modal/modal.html");
-    modal.webContents.openDevTools();
 
     // Hide while loading
     modal.once("ready-to-show", () => modal.show());
