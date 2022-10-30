@@ -129,7 +129,7 @@ app.on("ready", async () => {
       if (event.LOCATION)
         return {
           ...event,
-          ...config.location[event.LOCATION],
+          LOCATION: config.location[event.LOCATION].LOCATION,
         };
       return event;
     });
